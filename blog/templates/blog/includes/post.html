@@ -1,0 +1,21 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+<li>
+    <article class ="post">
+        <a href="{% url 'single-post-page' post.slug %} ">
+            <img width=200 src="{{post.images.url}} " alt=" {{post.title}} ">
+
+            <div class="post_content">
+                <p>{{post.images}} this is post image </p>
+                <h3>{{post.title}}</h3>
+                <p>{{post.excerpt}}
+                </p>
+            </div>
+        </a>
+
+
+
+    </article>
+</li>
+
+{% comment %} static 'blog/image/'|add:post.image {% endcomment %}

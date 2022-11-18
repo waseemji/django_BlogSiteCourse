@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Blog main page
+{% endblock page_title %}
+
+
+{% block css_filters %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %} ">
+    <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+{% endblock css_filters %}
+
+
+{% block content %}
+    {% comment %} <h1>This is blogs main page</h1>
+    <nav>
+        <a href="">All POsts</a>
+    </nav> {% endcomment %}
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/ji.jpg' %}" alt="MY image ">
+        <h2>Ji Blog</h2>
+    </header>
+    <p>HTis is Ji and welcome to my blog</p>
+</section>
+
+<section id = "latest-posts">
+    <h2>my latest thoughts</h2>
+    <ul>
+        {% for post  in posts %}
+        {% include "blog/includes/post.html" %}
+        
+        {% endfor %}
+        {% comment %} {% include "blog/includes/post.html" %} {% endcomment %}
+    </ul>
+</section>
+<section id ="about">
+    <h2>What i do?</h2>
+    <p>something about me </p>
+</section>
+
+{% endblock content %}
